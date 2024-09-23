@@ -6,7 +6,7 @@
 /*   By: arigonza <arigonza@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/23 18:04:57 by arigonza          #+#    #+#             */
-/*   Updated: 2024/09/23 18:13:50 by arigonza         ###   ########.fr       */
+/*   Updated: 2024/09/23 18:28:10 by arigonza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,12 +37,15 @@ int	ft_dbp_size(char **str)
  */
 char	**ft_dbstrdup(char **s1)
 {
-	char	*s2;
+	char	**s2;
 	int		i;
 
 	i = 0;
 	s2 = ft_calloc(ft_dbp_size(s1), sizeof(char *));
 	while (s1[i])
-		s2[i] = ft_strdup(s1[i++]);
+	{
+		s2[i] = ft_strdup(s1[i]);
+		i++;
+	}
 	return (s2);
 }
