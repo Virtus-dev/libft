@@ -6,7 +6,7 @@
 /*   By: arigonza <arigonza@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/21 17:24:01 by arigonza          #+#    #+#             */
-/*   Updated: 2024/09/23 18:03:35 by arigonza         ###   ########.fr       */
+/*   Updated: 2024/09/25 13:49:44 by arigonza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,6 +80,7 @@ int		ft_atoi(const char *str);
 long	ft_atol(const char *str);
 char	*ft_itoa(int n);
 void	ft_putnbr_fd(int n, int fd);
+int		ft_isnumeric(char *str);
 /*
  *LinkedList
  */
