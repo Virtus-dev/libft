@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line_bonus.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: arigonza < arigonza@student.42malaga.com>  +#+  +:+       +#+        */
+/*   By: arigonza <arigonza@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/18 18:21:34 by arigonza          #+#    #+#             */
-/*   Updated: 2023/01/14 12:32:44 by arigonza         ###   ########.fr       */
+/*   Updated: 2024/09/25 14:26:58 by arigonza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,12 +93,10 @@ char	*read_file(int fd, char *backup)
 char	*get_next_line(int fd)
 {
 	char			*line;
-	int				line_length;
 	static char		*backup[1040];
 
 	if (fd < 0 || BUFFER_SIZE <= 0)
 		return (NULL);
-	line_length = 0;
 	backup[fd] = read_file(fd, backup[fd]);
 	if (!backup[fd])
 		return (NULL);

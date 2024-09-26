@@ -1,38 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_isnumeric.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: arigonza <arigonza@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/28 14:00:03 by arigonza          #+#    #+#             */
-/*   Updated: 2024/09/25 13:19:07 by arigonza         ###   ########.fr       */
+/*   Created: 2024/09/25 13:45:38 by arigonza          #+#    #+#             */
+/*   Updated: 2024/09/25 13:54:28 by arigonza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/libft.h"
 
-int	ft_atoi(const char *str)
+/**
+ * @brief Checks if there's only numbers on the string.
+ * 
+ * @param str char* to check from.
+ * @return 1 if there's only numbers, 0 otherwise.
+ */
+int	ft_isnumeric(char *str)
 {
 	int	i;
-	int	result;
-	int	signo;
 
 	i = 0;
-	result = 0;
-	signo = 1;
-	while ((str[i] >= 9 && str[i] <= 13) || str[i] == ' ')
-			i++;
-	if (str[i] == '-' || str[i] == '+')
+	while (str[i])
 	{
-		if (str[i] == '-')
-			signo *= -1;
+		if (!ft_isdigit(str[i]))
+			return (0);
 		i++;
 	}
-	while (str[i] >= '0' && str[i] <= '9')
-	{
-		result = (result * 10) + (str[i] - '0');
-		i++;
-	}
-	return (result * signo);
+	return (1);
 }
