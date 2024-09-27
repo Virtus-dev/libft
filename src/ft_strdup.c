@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: arigonza < arigonza@student.42malaga.com>  +#+  +:+       +#+        */
+/*   By: arigonza <arigonza@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/29 16:18:06 by arigonza          #+#    #+#             */
-/*   Updated: 2022/10/18 16:40:34 by arigonza         ###   ########.fr       */
+/*   Updated: 2024/09/27 13:45:23 by arigonza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ char	*ft_strdup(const char *s1)
 {
 	char	*cpy;
 
+	if (!s1)
+		return (NULL);
 	cpy = (char *)malloc(ft_strlen(s1) + 1);
 	if (!cpy)
 		return (0);
