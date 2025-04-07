@@ -1,22 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_strchr_np.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: arigonza <arigonza@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/27 11:00:12 by arigonza          #+#    #+#             */
-/*   Updated: 2025/04/05 19:37:53 by arigonza         ###   ########.fr       */
+/*   Created: 2025/04/05 19:40:45 by arigonza          #+#    #+#             */
+/*   Updated: 2025/04/05 20:13:09 by arigonza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../includes/libft.h"
 
-char	*ft_strchr(const char *str, int c)
+int	ft_strchr_np(char *str, int c)
 {
-	while (*str != '\0' && (char)c != *str)
-		str++;
-	if ((char)c == *str)
-		return ((char *)str);
-	return (0);
+	if (!str)
+	{
+		ft_putstr("str NULL\n");
+		return (0);
+	}
+	if (*str == c)
+		return (1);
+	else
+		return (0);
 }

@@ -6,7 +6,7 @@
 #    By: arigonza <arigonza@student.42malaga.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/06/13 13:46:00 by arigonza          #+#    #+#              #
-#    Updated: 2024/09/26 16:17:06 by arigonza         ###   ########.fr        #
+#    Updated: 2025/04/05 19:44:13 by arigonza         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,7 +25,7 @@ SRC		= \
 	src/ft_itoa.c src/ft_lstnew_bonus.c src/ft_lstadd_front_bonus.c src/ft_is_space.c\
 	src/ft_lstsize_bonus.c src/ft_lstlast_bonus.c src/ft_lstadd_back_bonus.c src/ft_lstdelone_bonus.c src/ft_lstclear_bonus.c src/ft_lstiter_bonus.c src/ft_lstmap_bonus.c \
 	src/ft_isnumeric.c src/ft_printf.c src/get_next_line.c src/get_next_line_utils.c\
-	src/ft_mini_split.c\
+	src/ft_mini_split.c src/ft_strchr_np.c\
 
 OBJ		= ${SRC:.c=.o}
 

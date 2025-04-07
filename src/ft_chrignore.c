@@ -6,7 +6,7 @@
 /*   By: arigonza <arigonza@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/19 12:15:18 by arigonza          #+#    #+#             */
-/*   Updated: 2024/09/19 12:22:05 by arigonza         ###   ########.fr       */
+/*   Updated: 2025/04/06 23:28:02 by arigonza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,14 +22,17 @@
 char	*ft_chrignore(char *str, char c)
 {
 	int		i;
+	int		j;
 	char	*new_str;
 
 	i = 0;
-	new_str = ft_calloc(ft_strlen(str), sizeof(char));
+	j = 0;
+	new_str = ft_calloc(ft_strlen(str) + 1, sizeof(char));
 	while (str[i])
 	{
 		if (str[i] != c)
-			new_str[i] = str[i];
+			new_str[j++] = str[i];
+		//printf("str[%i] = %c & new_str[%i] = %c\n", i, str[i], j, new_str[j]);
 		i++;
 	}
 	free (str);
