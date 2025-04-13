@@ -6,7 +6,7 @@
 /*   By: arigonza <arigonza@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/21 17:24:01 by arigonza          #+#    #+#             */
-/*   Updated: 2025/04/05 19:43:46 by arigonza         ###   ########.fr       */
+/*   Updated: 2025/04/12 13:13:33 by arigonza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,6 +68,7 @@ void	ft_putstr_fd(char *s, int fd);
 void	ft_putstr(char* s);
 void	ft_putendl_fd(char *s, int fd);
 char	*ft_chrignore(char *str, char c);
+void	ft_printdbstring(char **db);
 /*
  * Type
  */
