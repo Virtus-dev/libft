@@ -6,14 +6,17 @@
 #    By: arigonza <arigonza@student.42malaga.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/06/13 13:46:00 by arigonza          #+#    #+#              #
-#    Updated: 2025/04/12 13:28:34 by arigonza         ###   ########.fr        #
+#    Updated: 2025/04/25 09:17:44 by arigonza         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CFLAGS  = -Wall -Wextra -Werror
 NAME    = libft.a
 AR		= ar -rcs
+
 INCLUDES = -Iincludes
+OBJDIR := obj
+
 SRC		= \
 	src/ft_isalpha.c src/ft_isdigit.c src/ft_isalnum.c src/ft_isascii.c src/ft_isprint.c \
 	src/ft_strlen.c src/ft_memset.c src/ft_bzero.c src/ft_memcpy.c src/ft_memcpy.c src/ft_memmove.c \
@@ -27,7 +30,11 @@ SRC		= \
 	src/ft_isnumeric.c src/ft_printf.c src/get_next_line.c src/get_next_line_utils.c\
 	src/ft_mini_split.c src/ft_printf_utils.c src/ft_strchr_np.c src/ft_printdbstring.c\
 
-OBJ		= ${SRC:.c=.o}
+OBJ		= $(patsubst src/%.c, $(OBJDIR)/%.o, $(SRC))
+
+$(OBJDIR)/%.o : src/%.c
+	@mkdir -p $(@D)
+	@$(CC) $(CFLAGS) $(INCLUDES) -c $< -o $@
 
 all: $(NAME)
 
@@ -35,7 +42,7 @@ $(NAME): $(OBJ)
 	@$(AR) $(NAME) $(OBJ)
 
 clean:
-	@rm -rf $(OBJ)
+	@rm -rf $(OBJDIR)
 
 fclean: clean
 	@rm -f $(NAME)
